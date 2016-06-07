@@ -4,8 +4,13 @@ $(document).ready(function() {
     var userInput = $('input#pali').val();
     var output = [];
     for ( var index = 0; index < userInput.length; index += 1) {
-      output.push(userInput[index]);
+      if ( userInput[index] === ' ') {
+        output.splice(index, 1);
+      } else {
+        output.push(userInput[index]);
+      }
     }
+
     var putout = output.slice();
     var putout = putout.reverse();
     var answernew = putout.join(' ');
